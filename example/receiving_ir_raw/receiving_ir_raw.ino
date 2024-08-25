@@ -1,4 +1,4 @@
-#include <IR_Remote.h>
+#include <IR_Remote_Raw.h>
 
 #define ir_recv_pin 2
 
@@ -19,10 +19,9 @@ void loop() {
 
   Serial.println("Copy these commands to the sending_ir_raw.ino file.\n");
 
-  Serial.print("ir_send_vals_len = ");
-  Serial.print(len);
-  Serial.println(";");
-  Serial.print("ir_send_vals[256] = {");
+  Serial.print("#define ir_send_vals_len ");
+  Serial.println(len);
+  Serial.print("uint16_t ir_send_vals[ir_send_vals_len] = {");
   for (int i = 0; i < len - 1; i++) {
     Serial.print(vals[i]);
     Serial.print(", ");
