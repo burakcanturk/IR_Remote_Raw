@@ -1,4 +1,4 @@
-#include "IR_Remote.h"
+#include "IR_Remote_.h"
 #include <Arduino.h>
 
 IRRecv::IRRecv(uint8_t pin) {
